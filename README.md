@@ -23,7 +23,7 @@ I know it’s not right to make a fake site like this – but I was young, curio
 
 ## 🚀 Live Demo
 
-👉 [Click here to view the live demo](https://your-demo-link-here.com) 👈  
+👉 [Click here to view the live demo](https://aaryanbanskota.github.io/fake-nagarpalika/) 👈  
 *(Take a trip back to my Class 9 creativity!)*
 
 ---
