@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fake Nagarpalika - Submit Letter</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body id="submit">
+  <!-- Navigation -->
+  <nav aria-label="Main navigation">
+    <ul>
+      <li><a href="index.html">🏠 Home</a></li>
+      <li><a href="signin.html">🔐 Sign In</a></li>
+      <li><a href="submit.html" class="active">📤 Submit Letter</a></li>
+      <li><a href="privacy.html">🔒 Privacy Policy</a></li>
+      <li><a href="terms.html">📄 Terms of Service</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="content-container" role="main">
+    <h2>📤 Submit Your Letter</h2>
+    <p>Please provide your message and any supporting file below.</p>
+    
+    <form id="submit-form" enctype="multipart/form-data" aria-label="Letter Submission Form">
+      <div class="form-group">
+        <label for="message">Your Message:</label>
+        <textarea id="message" name="message" rows="5" required placeholder="Type your letter or message here..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="file">Upload File:</label>
+        <input type="file" id="file" name="my_file" required />
+      </div>
+
+      <div class="form-actions">
+        <input type="submit" value="📨 Submit" class="btn-submit" />
+      </div>
+    </form>
+  </main>
+
+  <!-- Dark Mode Toggle -->
+  <button id="dark-mode-toggle" aria-label="Toggle Dark Mode">🌙</button>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

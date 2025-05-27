@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sign in to access Fake Nagarpalika services and submit your digital letters." />
+  <title>🔐 Fake Nagarpalika | Sign In</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body id="signin">
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="index.html">🏠 Home</a></li>
+      <li><a href="signin.html" aria-current="page">🔐 Sign In</a></li>
+      <li><a href="submit.html">✉️ Submit Letter</a></li>
+      <li><a href="privacy.html">🔒 Privacy Policy</a></li>
+      <li><a href="terms.html">📄 Terms</a></li>
+    </ul>
+  </nav>
+
+  <!-- Sign In Form -->
+  <main class="content-container">
+    <h2 class="animated-text">🔐 Sign In to Your Account</h2>
+    <form id="signin-form" autocomplete="on">
+      <label for="email">📧 Email Address:</label>
+      <input 
+        type="email" 
+        id="email" 
+        name="user_email" 
+        placeholder="you@example.com"
+        required 
+      />
+
+      <label for="password">🔑 Password:</label>
+      <input 
+        type="password" 
+        id="password" 
+        name="user_password" 
+        placeholder="••••••••" 
+        minlength="6"
+        required 
+      />
+
+      <button type="submit">🚪 Sign In</button>
+    </form>
+  </main>
+
+  <!-- Dark Mode Button -->
+  <button id="dark-mode-toggle" aria-label="Toggle Dark Mode" title="Toggle Dark Mode">🌙</button>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>Birtamode Negarpalika - Official Website</title>
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="Official website of Birtamode Negarpalika, a thriving municipality in Jhapa District, Nepal. Learn about our services, rules, and how to connect with us." />
+<meta name="keywords" content="Birtamode, Negarpalika, Municipality, Jhapa, Nepal, local government, community, services"/>
+<meta name="author" content="Birtamode Negarpalika"/>
+
+<!-- Open Graph -->
+<meta property="og:title" content="Birtamode Negarpalika - Official Website" />
+<meta property="og:description" content="Discover the official site of Birtamode Negarpalika. Community services, rules, forms, and sign in." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://birtamodenegrpalika.example/" />
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Birtamode_Municipality_Logo.png/300px-Birtamode_Municipality_Logo.png" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Birtamode Negarpalika - Official Website" />
+<meta name="twitter:description" content="Official website of Birtamode Negarpalika municipality in Nepal. Services, rules, community info, and forms." />
+<meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Birtamode_Municipality_Logo.png/300px-Birtamode_Municipality_Logo.png" />
+
+<!-- Favicon -->
+<link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/8/89/Birtamode_Municipality_Logo.png" type="image/png" sizes="32x32">
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+  /* Reset and base */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    background: var(--bg-gradient);
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+
+  :root {
+    --bg-gradient: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    --text-primary: #fff;
+    --text-secondary: #d3d3d3;
+    --nav-bg: rgba(255, 255, 255, 0.12);
+    --btn-bg-hover: #fff;
+    --btn-color-hover: #2575fc;
+    --shadow-color: rgba(0,0,0,0.3);
+    --success-color: #a0f0a0;
+    --error-color: #ffb3b3;
+  }
+  .dark {
+    --bg-gradient: linear-gradient(135deg, #161616 0%, #262626 100%);
+    --text-primary: #ddd;
+    --text-secondary: #999;
+    --nav-bg: rgba(255,255,255,0.08);
+    --btn-bg-hover: #2575fc;
+    --btn-color-hover: #fff;
+    --shadow-color: rgba(0,0,0,0.6);
+    --success-color: #7aeb7a;
+    --error-color: #e06666;
+  }
+
+  /* Skip to main content link for keyboard users */
+  a.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    z-index: 100;
+  }
+  a.skip-link:focus {
+    left: 10px;
+    top: 10px;
+    width: auto;
+    height: auto;
+    padding: 8px 12px;
+    background: var(--btn-bg-hover);
+    color: var(--btn-color-hover);
+    border-radius: 6px;
+    box-shadow: 0 0 6px var(--btn-bg-hover);
+    font-weight: 700;
+    text-decoration: none;
+    outline: none;
+  }
+
+  /* Navigation */
+  nav {
+    background: var(--nav-bg);
+    display: flex;
+    justify-content: center;
+    padding: 12px 0;
+    box-shadow: 0 2px 6px var(--shadow-color);
+    user-select: none;
+    flex-wrap: wrap;
+  }
+  nav button {
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 0 15px;
+    padding: 8px 20px;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    min-width: 110px;
+    outline-offset: 4px;
+  }
+  nav button:hover,
+  nav button:focus {
+    background-color: var(--btn-bg-hover);
+    color: var(--btn-color-hover);
+    outline: none;
+    box-shadow: 0 0 8px var(--btn-bg-hover);
+  }
+  nav button.active {
+    background-color: var(--btn-bg-hover);
+    color: var(--btn-color-hover);
+    box-shadow: 0 0 12px var(--btn-bg-hover);
+  }
+
+  main {
+    flex: 1;
+    padding: 20px 20px 40px;
+    max-width: 380px;
+    margin: 0 auto;
+    width: 90vw;
+    min-height: 560px;
+    position: relative;
+    overflow-y: auto;
+    outline: none;
+  }
+
+  section {
+    display: none;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    will-change: opacity, transform;
+  }
+  section.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Home Section */
+  #home header {
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  #home header h1 {
+    font-size: 2.4rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 6px var(--shadow-color);
+  }
+  #home header p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+  }
+
+  .image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px var(--shadow-color);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    max-width: 100%;
+  }
+  .image-container:hover,
+  .image-container:focus-within {
+    transform: scale(1.06);
+    box-shadow: 0 24px 48px var(--shadow-color);
+  }
+  .image-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    transition: transform 0.4s ease;
+  }
+  .image-container:hover img,
+  .image-container:focus-within img {
+    transform: scale(1.12);
+  }
+  
+  .caption {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 1.15rem;
+    font-weight: 600;
+    text-shadow: 1px 1px 4px var(--shadow-color);
+  }
+
+  #home .description {
+    margin-top: 25px;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    text-align: justify;
+  }
+
+  /* Sign In Section */
+  #signin,
+  #submit-letter,
+  #rules,
+  #contact,
+  #privacy,
+  #terms {
+    max-width: 340px;
+    margin: 0 auto;
+    border-radius: 16px;
+    background: var(--nav-bg);
+    padding: 25px 30px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+  }
+
+  section h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 1rem;
+  }
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  textarea {
+    padding: 10px 14px;
+    margin-bottom: 18px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1rem;
+    outline: none;
+    resize: vertical;
+    transition: box-shadow 0.3s ease;
+    background: #fff;
+    color: #222;
+  }
+  input[type="text"]:focus,
+  input[type="password"]:focus,
+  input[type="email"]:focus,
+  textarea:focus {
+    box-shadow: 0 0 8px #2575fc;
+  }
+  button[type="submit"] {
+    background: #2575fc;
+    border: none;
+    padding: 12px 0;
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  button[type="submit"]:hover,
+  button[type="submit"]:focus {
+    background: #1a54d4;
+    outline: none;
+  }
+  button[type="submit"][disabled] {
+    background: #999;
+    cursor: not-allowed;
+  }
+
+  .message {
+    margin-top: 12px;
+    text-align: center;
+    font-size: 0.95rem;
+  }
+  .message.success {
+    color: var(--success-color);
+  }
+  .message.error {
+    color: var(--error-color);
+  }
+  .message.info {
+    color: #ffd700;
+  }
+
+  /* Lists */
+  ul {
+    list-style: none;
+    padding-left: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--text-primary);
+  }
+  ul li {
+    margin-bottom: 12px;
+    padding-left: 24px;
+    position: relative;
+  }
+  ul li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #ffd700;
+    font-weight: bold;
+  }
+
+  /* Contact Section */
+  #contact p,
+  #privacy p,
+  #terms p {
+    margin-bottom: 1em;
+  }
+
+  /* Dark mode toggle */
+  .toggle-wrapper {
+    position: fixed;
+    top: 8px;
+    right: 10px;
+    user-select: none;
+    z-index: 200;
+  }
+  .toggle-wrapper label {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--text-primary);
+  }
+  .toggle-wrapper input[type="checkbox"] {
+    margin-left: 10px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+  }
+
+  /* Footer */
+  footer {
+    padding: 15px 20px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    user-select: none;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    nav button {
+      margin: 6px 10px;
+      font-size: 1rem;
+      padding: 8px 12px;
+      min-width: 90px;
+    }
+    main {
+      max-width: 90vw;
+      min-height: 520px;
+      padding: 15px 12px 35px;
+    }
+    #signin,
+    #rules,
+    #submit-letter,
+    #contact,
+    #privacy,
+    #terms {
+      max-width: 90vw;
+      padding: 20px 15px;
+    }
+    .toggle-wrapper {
+      position: static;
+      margin: 0 auto;
+      padding: 10px 0;
+      text-align: center;
+    }
+  }
+</style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <nav role="navigation" aria-label="Main navigation">
+    <button id="nav-home" class="active" tabindex="0" aria-controls="home" aria-selected="true">Home</button>
+    <button id="nav-signin" tabindex="0" aria-controls="signin" aria-selected="false">Sign In</button>
+    <button id="nav-rules" tabindex="0" aria-controls="rules" aria-selected="false">Rules</button>
+    <button id="nav-submit-letter" tabindex="0" aria-controls="submit-letter" aria-selected="false">Submit Letter</button>
+    <button id="nav-contact" tabindex="0" aria-controls="contact" aria-selected="false">Contact</button>
+    <button id="nav-privacy" tabindex="0" aria-controls="privacy" aria-selected="false">Privacy Policy</button>
+    <button id="nav-terms" tabindex="0" aria-controls="terms" aria-selected="false">Terms of Service</button>
+  </nav>
+
+  <div class="toggle-wrapper">
+    <label for="dark-mode-toggle" aria-live="polite">Dark Mode
+      <input type="checkbox" id="dark-mode-toggle" role="switch" aria-checked="false" />
+    </label>
+  </div>
+
+  <main id="main-content" tabindex="-1">
+    <section id="home" class="active" role="main" aria-label="Home page">
+      <header>
+        <h1>Birtamode Negarpalika</h1>
+        <p>Welcome to the official website</p>
+      </header>
+      <div class="image-container" tabindex="0" aria-label="Birtamode Negarpalika Logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Birtamode_Municipality_Logo.png/300px-Birtamode_Municipality_Logo.png" alt="Birtamode Negarpalika Logo" width="300" height="300" />
+      </div>
+      <div class="caption">Proudly serving the community</div>
+      <article class="description" tabindex="0">
+        <p>
+          Birtamode Negarpalika (Municipality) is a vibrant and growing city located in the Jhapa District of Province No. 1, Nepal. It serves as a key commercial and cultural hub in the region. Our mission is to foster sustainable community development by providing excellent services, infrastructure, and opportunities for all citizens. We embrace modernity while preserving our rich cultural heritage.
+        </p>
+        <p>
+          Explore our website to learn more about how Birtamode Negarpalika works for you, find important updates, and connect with your local government.
+        </p>
+      </article>
+    </section>
+
+    <section id="signin" role="main" aria-label="Sign In page">
+      <h2>Sign In</h2>
+      <form id="signin-form" aria-describedby="signin-message" novalidate>
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" autocomplete="username" required aria-required="true" aria-label="Username" />
+        
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" autocomplete="current-password" required aria-required="true" aria-label="Password" />
+        
+        <button type="submit">Sign In</button>
+      </form>
+      <div id="signin-message" class="message" aria-live="polite"></div>
+    </section>
+
+    <section id="rules" role="main" aria-label="Rules page">
+      <h2>Community Rules</h2>
+      <ul>
+        <li>Respect all community members and local authorities.</li>
+        <li>Maintain cleanliness and dispose of waste properly.</li>
+        <li>Follow traffic regulations and road safety rules.</li>
+        <li>Participate in community development activities positively.</li>
+        <li>Protect public property and natural resources.</li>
+        <li>Promote harmony and avoid conflicts within the community.</li>
+        <li>Support local businesses and sustainable practices.</li>
+      </ul>
+    </section>
+
+    <section id="submit-letter" role="main" aria-label="Submit Letter page">
+      <h2>Submit a Letter</h2>
+      <form id="letter-form" aria-describedby="submit-message" novalidate>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" autocomplete="name" required aria-required="true" aria-label="Full Name" placeholder="Your full name" />
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" autocomplete="email" required aria-required="true" aria-label="Email Address" placeholder="you@example.com" />
+
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" required aria-required="true" aria-label="Subject" placeholder="Subject of your letter" />
+
+        <label for="content">Letter Content</label>
+        <textarea id="content" name="content" required aria-required="true" aria-label="Letter Content" placeholder="Write your letter here..."></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+      <div id="submit-message" class="message" aria-live="polite"></div>
+    </section>
+
+    <section id="contact" role="main" aria-label="Contact page">
+      <h2>Contact Us</h2>
+      <p><strong>Address:</strong> Birtamode Municipality Office, Jhapa District, Province No. 1, Nepal</p>
+      <p><strong>Email:</strong> <a href="mailto:info@birtamode.gov.np" style="color:var(--btn-bg-hover); text-decoration:none;">info@birtamode.gov.np</a></p>
+      <p><strong>Phone:</strong> <a href="tel:+977234567890" style="color:var(--btn-bg-hover); text-decoration:none;">+977 23 4567890</a></p>
+      <p><strong>Follow us:</strong><br/>
+        <a href="https://www.facebook.com/BirtamodeMunicipality" target="_blank" rel="noopener" style="color:var(--btn-bg-hover); text-decoration:none;">Facebook</a> |
+        <a href="https://twitter.com/BirtamodeNegar" target="_blank" rel="noopener" style="color:var(--btn-bg-hover); text-decoration:none;">Twitter</a>
+      </p>
+    </section>
+
+    <section id="privacy" role="main" aria-label="Privacy Policy page">
+      <h2>Privacy Policy</h2>
+      <p>We value your privacy. This policy explains what data we collect, how we use it, and your choices.</p>
+      <p>No personal data is stored by this website except temporarily in your browser session during form submission.</p>
+      <p>We do not share your information with third parties without consent.</p>
+      <p>For more details, contact our office.</p>
+    </section>
+
+    <section id="terms" role="main" aria-label="Terms of Service page">
+      <h2>Terms of Service</h2>
+      <p>By using this website, you agree to comply with all applicable laws and regulations.</p>
+      <p>The content provided is for informational purposes only and does not create any legal obligations.</p>
+      <p>Birtamode Negarpalika reserves the right to update these terms at any time without prior notice.</p>
+      <p>If you have any questions, please contact our office.</p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2024 Birtamode Negarpalika. All rights reserved.
+  </footer>
+
+  <!-- Google Analytics (Dummy snippet for demo, replace with real ID) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID');
+  </script>
+
+  <script>
+    (function() {
+      const navButtons = document.querySelectorAll('nav button');
+      const sections = document.querySelectorAll('main > section');
+      const darkToggle = document.getElementById('dark-mode-toggle');
+      const body = document.body;
+      
+      // Accessibility: Focus main content on page change for screen readers
+      function focusMainContent(id) {
+        const section = document.getElementById(id);
+        if(!section) return;
+        section.setAttribute('tabindex', '-1');
+        section.focus();
+      }
+
+      // Page transition helper: fade out old, fade in new
+      function setActivePage(newActiveId) {
+        const current = document.querySelector('section.active');
+        if(current && current.id === newActiveId) return;
+
+        if(current) {
+          current.classList.remove('active');
+        }
+
+        const newSection = document.getElementById(newActiveId);
+        if(newSection) {
+          newSection.classList.add('active');
+          focusMainContent(newActiveId);
+        }
+
+        navButtons.forEach(btn => {
+          if(btn.id === 'nav-' + newActiveId) {
+            btn.classList.add('active');
+            btn.setAttribute('aria-selected', 'true');
+            btn.setAttribute('tabindex', '0');
+          } else {
+            btn.classList.remove('active');
+            btn.setAttribute('aria-selected', 'false');
+            btn.setAttribute('tabindex', '-1');
+          }
+        });
+
+        clearMessages();
+      }
+
+      navButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          setActivePage(btn.id.replace('nav-', ''));
+        });
+        btn.addEventListener('keyup', e => {
+          if(e.key === 'Enter' || e.key === ' ') {
+            btn.click();
+            e.preventDefault();
+          }
+        });
+      });
+
+      // Sign In form logic (dummy, improved UX)
+      const formSignin = document.getElementById('signin-form');
+      const messageSignin = document.getElementById('signin-message');
+
+      formSignin.addEventListener('submit', function(e) {
+        e.preventDefault();
+        messageSignin.textContent = '';
+        messageSignin.className = 'message info';
+        const username = formSignin.username.value.trim();
+        const password = formSignin.password.value.trim();
+
+        if(!username || !password) {
+          messageSignin.textContent = 'Please enter both username and password.';
+          messageSignin.className = 'message error';
+          return;
+        }
+
+        // Disable button to prevent repeat submits
+        formSignin.querySelector('button[type="submit"]').disabled = true;
+        messageSignin.textContent = 'Signing in...';
+
+        setTimeout(() => {
+          if(username.toLowerCase() === 'admin' && password === 'password') {
+            messageSignin.textContent = 'Sign in successful! Welcome, admin.';
+            messageSignin.className = 'message success';
+          } else {
+            messageSignin.textContent = 'Invalid username or password.';
+            messageSignin.className = 'message error';
+          }
+          formSignin.querySelector('button[type="submit"]').disabled = false;
+        }, 1200);
+      });
+
+      // Submit Letter form logic (better UX)
+      const formLetter = document.getElementById('letter-form');
+      const messageSubmit = document.getElementById('submit-message');
+
+      formLetter.addEventListener('submit', function(e) {
+        e.preventDefault();
+        messageSubmit.textContent = '';
+        messageSubmit.className = 'message info';
+
+        const name = formLetter.name.value.trim();
+        const email = formLetter.email.value.trim();
+        const subject = formLetter.subject.value.trim();
+        const content = formLetter.content.value.trim();
+
+        if(!name || !email || !subject || !content) {
+          messageSubmit.textContent = 'Please fill in all fields.';
+          messageSubmit.className = 'message error';
+          return;
+        }
+
+        // Simple email format validation
+        const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+        if(!emailRegex.test(email)) {
+          messageSubmit.textContent = 'Please enter a valid email address.';
+          messageSubmit.className = 'message error';
+          return;
+        }
+
+        // Disable submit button to prevent multiple submissions
+        formLetter.querySelector('button[type="submit"]').disabled = true;
+
+        messageSubmit.textContent = 'Submitting your letter...';
+
+        setTimeout(() => {
+          messageSubmit.textContent = 'Thank you, your letter has been submitted successfully!';
+          messageSubmit.className = 'message success';
+          formLetter.reset();
+          formLetter.querySelector('button[type="submit"]').disabled = false;
+        }, 1300);
+      });
+
+      // Clear all messages on page switch
+      function clearMessages() {
+        messageSignin.textContent = '';
+        messageSignin.className = 'message';
+        messageSubmit.textContent = '';
+        messageSubmit.className = 'message';
+      }
+
+      // Dark Mode toggle with localStorage persistence
+      function isDarkMode() {
+        return localStorage.getItem('bnp-dark-mode') === 'true';
+      }
+      function applyDarkMode(enabled) {
+        if(enabled) {
+          body.classList.add('dark');
+          darkToggle.checked = true;
+          darkToggle.setAttribute('aria-checked', 'true');
+        } else {
+          body.classList.remove('dark');
+          darkToggle.checked = false;
+          darkToggle.setAttribute('aria-checked', 'false');
+        }
+      }
+      darkToggle.addEventListener('change', () => {
+        const enabled = darkToggle.checked;
+        applyDarkMode(enabled);
+        localStorage.setItem('bnp-dark-mode', enabled.toString());
+      });
+      // Initial load dark mode
+      applyDarkMode(isDarkMode());
+
+      // Keyboard shortcut: allow cycling pages with arrow keys when nav is focused
+      document.querySelector('nav').addEventListener('keydown', e => {
+        if(e.key === 'ArrowRight' || e.key === 'ArrowLeft'){
+          e.preventDefault();
+          const focused = document.activeElement;
+          if(focused.tagName !== 'BUTTON') return;
+          let idx = Array.from(navButtons).indexOf(focused);
+          if(idx === -1) return;
+          if(e.key === 'ArrowRight'){
+            idx = (idx + 1) % navButtons.length;
+          } else {
+            idx = (idx - 1 + navButtons.length) % navButtons.length;
+          }
+          navButtons[idx].focus();
+        }
+      });
+
+      // Accessibility: focus main section on page load
+      window.addEventListener('load', () => {
+        focusMainContent('home');
+      });
+
+    })();
+  </script>
+</body>
+</html>
+
