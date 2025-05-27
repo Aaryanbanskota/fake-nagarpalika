@@ -1,39 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Fake Nagarpalika is a student project simulating a municipal site. Sign in, read rules, and submit letters." />
-  <meta name="author" content="Your Name" />
-  <title>🏛️ Fake Nagarpalika | Home</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body id="home">
-  <!-- Navigation Bar -->
-  <nav>
-    <ul>
-      <li><a href="index.html" aria-current="page">🏠 Home</a></li>
-      <li><a href="signin.html">🔐 Sign In</a></li>
-      <li><a href="submit.html">✉️ Submit Letter</a></li>
-      <li><a href="privacy.html">🔒 Privacy Policy</a></li>
-      <li><a href="terms.html">📄 Terms</a></li>
-            <li><a href="games.html">🎮 Games</a></li>
+<body>
+    <!-- Hover bar with link to game hub -->
+    <div id="hoverBar" class="hover-bar">
+        <button id="gameHubBtn">Go to Game Hub</button>
+    </div>
 
-    </ul>
-  </nav>
+    <div id="menu" class="menu-container">
+        <h1 class="game-title">Snake Game</h1>
+        <button id="startGameBtn">Start Game</button>
+        <button id="quitBtn">Quit</button>
+    </div>
 
-  <!-- Main Content -->
-  <main class="content-container">
-    <h1 class="animated-text">🏛️ Welcome to the Fake Official Nagarpalika Portal</h1>
-    <p>📌 This site is a simulation built for educational purposes. Explore features like user sign-in, letter submissions, and municipal policies.</p>
-  </main>
+    <div id="gameScreen" class="game-container" style="display: none;">
+        <h1 class="game-title">Snake Game</h1>
+        <canvas id="gameCanvas" width="400" height="400"></canvas>
+        <div id="score" style="color:white; margin-top: 10px;">Score: 0</div>
+        <button id="backToMenuBtn">Back to Menu</button>
+    </div>
 
-  <!-- Dark Mode Toggle Button -->
-  <button id="dark-mode-toggle" aria-label="Toggle Dark Mode" title="Switch between dark and light mode">🌙</button>
-
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
